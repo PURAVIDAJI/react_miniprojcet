@@ -3,6 +3,7 @@ import Home from "./pages/Main/Home";
 import New from "./pages/Main/New";
 import Edit from "./pages/Main/Edit";
 import Detail from "./pages/Main/Detail";
+import Cart from "./pages/Main/Cart";
 import Introduce from "./pages/Main/Introduce";
 import LoginForm from "./pages/Login/LoginForm";
 import SignUpForm from "./pages/SignUp/SignUpForm";
@@ -24,8 +25,9 @@ const Routing = () => {
           {/* path에 아무것도 없을 때는 Home페이지로 */}
           <Route path="/introduce" element={<Introduce />} />
           <Route path="/new" element={<New />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/mypage/cart" element = {<Cart/>}/>
 
           {/* 형식: 로그인/회원가입/아이디찾기,비밀번호찾기, 마이페이지, 로그아웃 라우팅 */}
           <Route path="/login" element={<LoginForm />} />

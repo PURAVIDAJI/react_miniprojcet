@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import SideBar from "../components/SideBar";
+import Header from "../../components/Header.js";
+import SideBar from "../../components/SideBar.js";
 
 const MyPage = () => {
   return (
