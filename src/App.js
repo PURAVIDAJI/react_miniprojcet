@@ -1,8 +1,9 @@
-import React, { useReducer, useRef } from 'react';
+import React, { useReducer, useRef,useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import MyHeader from './components/MyHeader';
 import Routing from './Routing';
+import { AuthProvider} from './pages/Login/AuthContext';
 
 import Home from './pages/Main/Home';
 import MyCarousel from './components/MyCarousel';
@@ -131,9 +132,6 @@ const dummyData = [
 const App = () => {
 
   const [data, dispatch] = useReducer(reducer, dummyData);
- 
-
-
   const dataId = useRef(8);
 
   //create
@@ -175,12 +173,14 @@ const App = () => {
     const item = { id, category, content, date, location, addedToCart };
 
     dispatch({ type: "ADD_TO_CART", item });
-  }
+  };
+
+
 
   return (
     <div className='App'>
 
-
+      <AuthProvider>
       <MyHeader />
       <VolunteerStateContext.Provider value={data}>
         <VolunteerDispatchContext.Provider
@@ -195,6 +195,7 @@ const App = () => {
           <Routing />
         </VolunteerDispatchContext.Provider>
       </VolunteerStateContext.Provider>
+      </AuthProvider>
 
 
 

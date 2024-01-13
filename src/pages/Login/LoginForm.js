@@ -1,50 +1,51 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./LoginForm.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../errors/NotFound.js";
+import AuthContext from "./AuthContext.js";
 
-function Login({ onLogin }) {
+// 더미 데이터
+const dummyUserData = [
+  {
+    userid: "happyday",
+    password: "Password123",
+  },
+  {
+    userid: "lovelyday",
+    password: "Password456",
+  },
+
+];
+
+function Login() {
   const {
     register,
     handleSubmit,
     formState: { isSubmitting, isSubmitted, errors }, //중복제출 방지, true:비활성, false:활성
   } = useForm();
   const navigate = useNavigate();
-
-  const [userid, setuserid] = useState("");
-  const [password, setpassword] = useState("");
+  const {login} =useContext(AuthContext);
 
   const onSubmit = async (data) => {
     const { userid, password } = data;
-    try {
-      const response = await axios.get(
-        `http://localhost:3000/user?userid=${userid}`
-      );
 
-      if (response.data.length > 0) {
-        const user = response.data[0]; // 첫번째로 일치하는 사용자 정보를 가져옴
-
+    //더미 데이터에서 사용자 찾기
+    const user = dummyUserData.find((userData) => userData.userid === userid);
+  
         if (user.password === password) {
           alert("로그인 성공!");
           navigate("/");
-          onLogin(true);
+          login(); //로그인 성공 시 AuthContext의 login 함수 호출한다!!!
         } else {
           alert("로그인 실패! 비밀번호가 일치하지 않습니다.");
           console.log(data);
-          console.log(response.data);
+          
         }
-      } else {
-        alert("로그인 실패! 해당 아이디가 존재하지 않습니다.");
-        console.log(data);
-        console.log(response.data);
-      }
-    } catch (error) {
-      alert("로그인 중 오류가 발생했습니다. 다시 시도해주세요.");
-      console.error("Error during signup:", error);
-    }
+      
+
   };
 
   return (
