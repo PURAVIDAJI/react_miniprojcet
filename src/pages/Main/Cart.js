@@ -4,6 +4,7 @@ import SideBar from "../../components/SideBar";
 import { VolunteerStateContext } from "../../App";
 import MyButton from "../../components/MyButton";
 import { useNavigate } from "react-router-dom";
+import MyHeader from "../../components/MyHeader";
 
 const Cart = () => {
 
@@ -15,6 +16,7 @@ const Cart = () => {
     return (
 
         <div className="MyPage">
+            <MyHeader/>
             <Header
                 headText={"현재 신청 내역"}
                 leftChild={

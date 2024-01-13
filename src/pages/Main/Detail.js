@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import MyButton from "../../components/MyButton";
 import { categoryList } from "../../util/category";
 import Parser from 'html-react-parser';
+import MyHeader from "../../components/MyHeader";
 
 const Detail = () => {
     
@@ -58,6 +59,7 @@ const Detail = () => {
 
         return (
             <div className="DetailPage">
+                <MyHeader/>
                 <Header 
                 headText={"상세페이지"}
                 leftChild={

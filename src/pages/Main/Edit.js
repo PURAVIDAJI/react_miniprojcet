@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { VolunteerStateContext } from "../../App";
 import VolunteerEditor from "../../components/VolunteerEditor";
+import MyHeader from "../../components/MyHeader";
 
 const Edit = () => {
 
@@ -36,6 +37,7 @@ const Edit = () => {
     return (
         
         <div>
+            <MyHeader/>
            {originData &&<VolunteerEditor isEdit={true} originData={originData}/>}
         </div>
     );

@@ -178,7 +178,6 @@ const App = () => {
     <div className='App'>
 
       <AuthProvider>
-      <MyHeader />
       <VolunteerStateContext.Provider value={data}>
         <VolunteerDispatchContext.Provider
           value={{

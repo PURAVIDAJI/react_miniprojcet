@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 // import { Link } from "react-router-dom";
 import { useContext} from "react";
 import AuthContext from "../pages/Login/AuthContext";
+import { Link } from "react-router-dom";
 
 const MyHeader = () => {
 
@@ -32,35 +33,57 @@ const MyHeader = () => {
     <>
       <Navbar bg="primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/">VolunteerNow</Navbar.Brand>
+          <Link to="/" style={{ textDecoration: "none" }}>
+          <Navbar.Brand>VolunteerNow</Navbar.Brand>
+          </Link>
+
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/introduce">Introduce</Nav.Link>
-            <Nav.Link href="/MyPage">My Page</Nav.Link>
+            <Link to="/" style={linkStyle}>
+            Home
+            </Link>
+            <Link to="/introduce" style={linkStyle}>
+            Introduce
+            </Link>
+            <Link to="/mypage" style={linkStyle}>
+            My Page
+            </Link>
           </Nav>
 
           <Nav>
           {isAuthenticated ? (
             <>
-            <Button href="/new" variant="success">
-              모집글작성
-            </Button>
+            <Link to="/new">
+              <Button  variant="success">
+                모집글작성
+              </Button>
+            </Link>
             
               <Button variant="danger" onClick={handleLogout}>
                 Log-Out
               </Button>
             </>
         ) :(
-            <Button
-              href="/login" variant="danger">
+          <Link to="/login">
+            <Button variant="danger">
               Log-In
             </Button>
+            </Link>
         )}
           </Nav>
         </Container>
       </Navbar>
     </>
   );
+};
+
+const linkStyle = {
+  textDecoration: "none",
+  padding: "0.5rem 1rem",
+  display: "flex",
+  alignItems: "center",
+ 
+  
+  transition: "color 0.2s", // Smooth transition on color change
 };
 
 export default MyHeader;

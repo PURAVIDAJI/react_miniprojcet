@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import "../../errors/NotFound.js";
 import AuthContext from "./AuthContext.js";
+import MyHeader from "../../components/MyHeader";
 
 // 더미 데이터
 const dummyUserData = [
@@ -49,7 +50,10 @@ function Login() {
   };
 
   return (
+    <div>
+    <MyHeader />
     <div className="login-page">
+      
       <div className="form">
         <h2 className="login-h2"> 오늘의 봉사 </h2>
 
@@ -103,6 +107,7 @@ function Login() {
           </p>
         </form>
       </div>
+    </div>
     </div>
   );
 }
