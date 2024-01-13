@@ -1,7 +1,5 @@
 import React, { useReducer, useRef} from 'react';
 import './App.css';
-
-import MyHeader from './components/MyHeader';
 import Routing from './Routing';
 import { AuthProvider} from './pages/Login/AuthContext';
 
