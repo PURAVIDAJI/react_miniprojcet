@@ -10,7 +10,7 @@ import SignUpForm from "./pages/SignUp/SignUpForm";
 import NotFound from "./errors/NotFound";
 import FindID from "./pages/Login/FindID";
 import FindPW from "./pages/Login/FindPW";
-import MyPage from "./pages/Main/mypage";
+// import MyPage from "./pages/Main/mypage";
 import UserList from "./pages/User/UserList";
 import Logout from "./pages/Logout/Logout";
 import LogoutForm from "./pages/Logout/LogoutForm";

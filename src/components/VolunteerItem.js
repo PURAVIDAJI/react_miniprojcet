@@ -29,7 +29,7 @@ const VolunteerItem = ({ id, category, content, date, location }) => {
           `category_img_wrapper_${category}`,
         ].join(" ")}
       >
-        <img src={`/images/category${category}.png`} />
+        <img src={`/images/category${category}.png`} alt="" />
       </div>
       <div onClick={goDetail} className="info_wrapper">
         <div className="volunteer_date">{strDate}</div>

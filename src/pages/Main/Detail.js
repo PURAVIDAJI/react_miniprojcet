@@ -39,7 +39,7 @@ const Detail = () => {
         }
 
         }
-    },[id,volunteerList]);
+    },[id,volunteerList,navigate]);
 
     if(!data){
         return<div className="DetailPage">로딩중입니다...</div>;
@@ -72,7 +72,7 @@ const Detail = () => {
                 
                         <div className="volunteer_image_wrapper">
 
-                            <img src = {data.image}/>
+                            <img src = {data.image} alt=""/>
 
                         </div>
 
@@ -84,7 +84,7 @@ const Detail = () => {
                             `category_img_wrapper_${data.category}`,
                             ].join(" ")
                             }>
-                            <img className="img" src={currentVolunteerData.category_img}/>
+                            <img className="img" src={currentVolunteerData.category_img} alt=""/>
                             <div className="category_description">
                                 {currentVolunteerData.category_description}
 

@@ -12,14 +12,14 @@ const SignUp = () => {
     register,
     handleSubmit,
     reset,
-    formState: { isSubmitting, isSubmitted, errors }, //중복 방지
+    formState: {  isSubmitted, errors }, //중복 방지
   } = useForm();
 
   const navigate = useNavigate();
-  const [userid, setUserid] = useState();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
-  const [email, setEmail] = useState();
+  const [setUserid] = useState();
+  const [setUsername] = useState();
+  const [ setPassword] = useState();
+  const [setEmail] = useState();
 
   const onSubmit = async (formData) => {
     try {
@@ -29,8 +29,7 @@ const SignUp = () => {
         response.formData &&
         typeof response.formData === "object"
       ) {
-        const { userid, username, password, email } = response.formData;
-        // ... rest of your code
+        
       }
 
       alert("회원가입 성공!");
@@ -70,7 +69,7 @@ const SignUp = () => {
             placeholder="username"
             name="username"
             onChange={(e) => setUsername(e.target.value)}
-            aria-Invalid={
+            aria-invalid={
               //submit -> password가 유효성검사 통과했을 때 비활성화 제출
               isSubmitted ? (errors.uesrname ? "true" : "false") : undefined
             }
@@ -89,7 +88,7 @@ const SignUp = () => {
             placeholder="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
-            aria-Invalid={
+            aria-invalid={
               //submit -> password가 유효성검사 통과했을 때 비활성화 제출
               isSubmitted ? (errors.password ? "true" : "false") : undefined
             }
@@ -127,7 +126,7 @@ const SignUp = () => {
             placeholder="email@test.com"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
-            aria-Invalid={
+            aria-invalid={
               //submit -> password가 유효성검사 통과했을 때 비활성화 제출
               isSubmitted ? (errors.email ? "true" : "false") : undefined
             }

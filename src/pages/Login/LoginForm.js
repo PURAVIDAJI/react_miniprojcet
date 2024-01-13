@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { useForm } from "react-hook-form";
 import "./LoginForm.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import "../../errors/NotFound.js";
 import AuthContext from "./AuthContext.js";
 
@@ -24,7 +24,7 @@ function Login() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting, isSubmitted, errors }, //중복제출 방지, true:비활성, false:활성
+    formState: { isSubmitting, errors }, //중복제출 방지, true:비활성, false:활성
   } = useForm();
   const navigate = useNavigate();
   const {login} =useContext(AuthContext);

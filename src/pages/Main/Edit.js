@@ -31,7 +31,7 @@ const Edit = () => {
         
         }
 
-    },[id,volunteerList]);
+    },[id,volunteerList,navigate]);
 
     return (
         

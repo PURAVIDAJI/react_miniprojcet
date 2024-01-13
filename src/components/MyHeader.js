@@ -3,8 +3,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-import { useContext,useEffect } from "react";
+// import { Link } from "react-router-dom";
+import { useContext} from "react";
 import AuthContext from "../pages/Login/AuthContext";
 
 const MyHeader = () => {
@@ -12,7 +12,7 @@ const MyHeader = () => {
 
 
   // authContext가 null인 경우에 대한 처리 추가
-  const { isAuthenticated, logout, login, basename } = useContext(AuthContext);
+  const { isAuthenticated, logout } = useContext(AuthContext);
   
   
   const handleLogout = () =>{
