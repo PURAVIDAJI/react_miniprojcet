@@ -1,0 +1,3 @@
+[submodule "miniproject-master"]
+	path = miniproject-master
+	url = https://github.com/PURAVIDAJI/react_miniprojcet.git
