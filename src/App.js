@@ -137,7 +137,7 @@ const App = () => {
   const dataId = useRef(8);
 
   //create
-  const onCreate = (date, content, category, location, detail, image) => {
+  const onCreate = (date, content, category, location, detail, image, userid) => {
     dispatch({
       type: "CREATE", data: {
         id: dataId.current,
@@ -147,6 +147,7 @@ const App = () => {
         location,
         detail,
         image,
+        userid,
       },
     });
     dataId.current += 1;
@@ -168,6 +169,7 @@ const App = () => {
         location,
         detail,
         image,
+       
       },
     });
   };

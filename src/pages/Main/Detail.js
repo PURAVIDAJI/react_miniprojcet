@@ -58,6 +58,7 @@ const Detail = () => {
         //위치가 중요하다.데이터 받고,리턴 하기 전에 선언해야 함.
 
 
+        console.log(data.userid);
 
         return (
             <div>

@@ -6,6 +6,7 @@ import MyButton from "./MyButton";
 import CategoryItem from "./CategoryItem";
 import { VolunteerDispatchContext } from "../App";
 import { categoryList } from "../util/category.js";
+import AuthContext from "../pages/Login/AuthContext.js";
 
 const getStringDate = (date) => {
   return date.toISOString().slice(0, 10);
@@ -24,7 +25,8 @@ const VolunteerEditor = ({ isEdit, originData }) => {
 
   const [category, setCategory] = useState(1);
   const [date, setDate] = useState(getStringDate(new Date()));
-
+  
+  const {userid} = useContext(AuthContext);
   const { onCreate, onEdit } = useContext(VolunteerDispatchContext);
 
   const handleClickCate = (category) => {
@@ -55,7 +57,7 @@ const VolunteerEditor = ({ isEdit, originData }) => {
       )
     ) {
       if (!isEdit) {
-        onCreate(date, content, category, location, detailCon, imageSrc);
+        onCreate(date, content, category, location, detailCon, imageSrc, userid);
       } else {
         onEdit(
           originData.id,
@@ -64,7 +66,8 @@ const VolunteerEditor = ({ isEdit, originData }) => {
           category,
           location,
           detailCon,
-          imageSrc
+          imageSrc,
+  
         );
       }
     }
@@ -102,6 +105,8 @@ const VolunteerEditor = ({ isEdit, originData }) => {
       };
     }
   };
+
+
 
   return (
     <div className="VolunteerEditor">
