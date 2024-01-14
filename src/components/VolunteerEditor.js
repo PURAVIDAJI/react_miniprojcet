@@ -67,6 +67,7 @@ const VolunteerEditor = ({ isEdit, originData }) => {
           location,
           detailCon,
           imageSrc,
+          userid
   
         );
       }

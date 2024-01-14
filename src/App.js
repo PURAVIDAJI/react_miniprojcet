@@ -158,7 +158,7 @@ const App = () => {
     dispatch({ type: "REMOVE", targetId });
   }
   //Edit
-  const onEdit = (targetId, date, content, category, location, detail, image) => {
+  const onEdit = (targetId, date, content, category, location, detail, image, userid) => {
     dispatch({
       type: "EDIT",
       data: {
@@ -169,6 +169,7 @@ const App = () => {
         location,
         detail,
         image,
+        userid,
        
       },
     });
