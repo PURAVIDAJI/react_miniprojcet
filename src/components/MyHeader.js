@@ -3,8 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
-// import { Link } from "react-router-dom";
-import { useContext} from "react";
+import {useContext} from "react";
 import AuthContext from "../pages/Login/AuthContext";
 import { Link } from "react-router-dom";
 
@@ -13,20 +12,12 @@ const MyHeader = () => {
 
 
   // authContext가 null인 경우에 대한 처리 추가
-  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { isAuthenticated, logout, username } = useContext(AuthContext);
   
   
   const handleLogout = () =>{
     logout();
   }
-
-
-  // useEffect(() => {
-  //   const storedUser = localStorage.getItem('user');
-  //   if (storedUser) {
-  //     login(); //저장된 사용자 정보가 있으면 로그인 상태로 설정
-  //   }
-  // }, [login]);
 
 
   return (
@@ -52,6 +43,13 @@ const MyHeader = () => {
           <Nav>
           {isAuthenticated ? (
             <>
+
+            {/* 로그인한 사람의 이름을 표시하고 싶음 */}
+
+            <Nav.Item style={nameStyle}>
+              {username && `${username}님, 환영합니다!`}
+            </Nav.Item>
+
             <Link to="/new">
               <Button  variant="success">
                 모집글작성
@@ -63,6 +61,9 @@ const MyHeader = () => {
               </Button>
             </>
         ) :(
+      
+
+
           <Link to="/login">
             <Button variant="danger">
               Log-In
@@ -86,4 +87,12 @@ const linkStyle = {
   transition: "color 0.2s", // Smooth transition on color change
 };
 
+
+const nameStyle = {
+  
+  padding: "0.5rem 1rem",
+  color: "white", 
+  display: "flex",
+  alignItems: "center"
+};
 export default MyHeader;

@@ -13,15 +13,17 @@ const dummyUserData = [
   {
     userid: "happyday",
     password: "Password123",
+    username : "김해피"
   },
   {
     userid: "lovelyday",
     password: "Password456",
+    username: "박블리"
   },
 
 ];
 
-function Login() {
+function Login({ onLogin}) {
   const {
     register,
     handleSubmit,
@@ -36,10 +38,10 @@ function Login() {
     //더미 데이터에서 사용자 찾기
     const user = dummyUserData.find((userData) => userData.userid === userid);
   
-        if (user.password === password) {
+        if (user && user.password === password) {
           alert("로그인 성공!");
           navigate("/");
-          login(); //로그인 성공 시 AuthContext의 login 함수 호출한다!!!
+          login(user); //로그인 성공 시 AuthContext의 login 함수 호출한다!!!
         } else {
           alert("로그인 실패! 비밀번호가 일치하지 않습니다.");
           console.log(data);

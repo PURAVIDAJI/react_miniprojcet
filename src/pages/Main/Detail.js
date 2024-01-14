@@ -6,6 +6,7 @@ import MyButton from "../../components/MyButton";
 import { categoryList } from "../../util/category";
 import Parser from 'html-react-parser';
 import MyHeader from "../../components/MyHeader";
+import AuthContext from "../Login/AuthContext";
 
 const Detail = () => {
     
@@ -14,6 +15,7 @@ const Detail = () => {
 
     // 리스트를 받아오기
     const volunteerList = useContext(VolunteerStateContext);
+    const{isAuthenticated ,userid} =useContext(AuthContext); //로그인한 userid 받아오기
     const navigate = useNavigate();
     const [data,setData] =useState();
 
@@ -58,15 +60,19 @@ const Detail = () => {
 
 
         return (
+            <div>
+            <MyHeader/>
             <div className="DetailPage">
-                <MyHeader/>
+                
                 <Header 
                 headText={"상세페이지"}
                 leftChild={
                     <MyButton text={"<뒤로가기"} onClick={()=>navigate(-1)}/>
                 }
                 rightChild={
-                    <MyButton text={"수정하기"} onClick={() =>navigate(`/edit/${data.id}`)}/>
+                    (userid === data.userid)?(
+                    <MyButton text={"수정하기"} onClick={() =>navigate(`/edit/${data.id}`)}/>)
+                    :null
                 }
                 />
                 <article>
@@ -117,6 +123,7 @@ const Detail = () => {
 
                 
 
+            </div>
             </div>
         );
 
