@@ -70,7 +70,9 @@ const Detail = () => {
                     <MyButton text={"<뒤로가기"} onClick={()=>navigate(-1)}/>
                 }
                 rightChild={
-                    (userid === data.userid)?(
+                    (isAuthenticated && userid === data.userid)?
+                    //로그인했고, 게시글 쓴 userid와 로그인 아이디가 같을 때만, 수정하기 버튼 보여준다.
+                    (
                     <MyButton text={"수정하기"} onClick={() =>navigate(`/edit/${data.id}`)}/>)
                     :null
                 }
