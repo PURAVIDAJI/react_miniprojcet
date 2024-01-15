@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import "./SignUpForm.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
 import "../../errors/NotFound.js";
@@ -18,12 +18,16 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [setUserid] = useState();
   const [setUsername] = useState();
-  const [ setPassword] = useState();
+  const [setPassword] = useState();
   const [setEmail] = useState();
+  const [gender,setGender] = useState("man");
 
   const onSubmit = async (formData) => {
+  
+
     try {
-      const response = await axios.post("http://localhost:3000/user", formData);
+      formData.gender = gender;
+      const response = await axios.post("http://localhost:8000/users", formData);
       if (
         response &&
         response.formData &&
@@ -53,6 +57,7 @@ const SignUp = () => {
             type="text"
             placeholder="userId"
             name="userid"
+            
             onChange={(e) => setUserid(e.target.value)}
             {...register("userid", {
               required: "id는 필수 입력사항입니다.",
@@ -103,24 +108,7 @@ const SignUp = () => {
           />
           {errors.password && <span>비밀번호는 필수 입력 항목입니다.</span>}
 
-          {/* <input
-            type="date"
-            placeholder="0000-00-00"
-            name="birthdate"
-            aria-Invalid={
-              //submit -> password가 유효성검사 통과했을 때 비활성화 제출
-              isSubmitted ? (errors.birthdate ? "true" : "false") : undefined
-            }
-            {...register("birthdate", {
-              required: "생년월일은 필수 입력사항입니다.",
-              pattern: {
-                value: /^\d{4}-\d{2}-\d{2}$/,
-                message: "생년월일은 YYYY-MM-DD 형식으로 입력해야 합니다.",
-              },
-            })}
-          />
-          {errors.birthdate && <span>{errors.birthdate.message}</span>} */}
-
+       
           <input
             type="email"
             placeholder="email@test.com"
@@ -143,10 +131,10 @@ const SignUp = () => {
           <div className="radio-box">
             {/* 중복 없음 : 둘 중 하나 선택 */}
             <label htmlFor="man">남</label>
-            <input type="radio" name="gender" value="man" id="man" checked />
+            <input type="radio" name="gender" value="man" id="man" checked ={gender ==="man"} onChange={() =>setGender("man")}/>
 
             <label htmlFor="woman">여</label>
-            <input type="radio" name="gender" value="woman" id="woman" />
+            <input type="radio" name="gender" value="woman" id="woman" checked ={gender ==="woman"} onChange={() =>setGender("woman")}/>
           </div>
 
           <button type="submit">SignUp</button>

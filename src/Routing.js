@@ -51,7 +51,7 @@ const Routing = () => {
           <Route path="/userlist" element={<UserList />} />
 
           {/* 404 NOT FOUND */}
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </div>
     </BrowserRouter>

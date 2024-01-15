@@ -7,21 +7,8 @@ import { useNavigate } from "react-router-dom";
 import "../../errors/NotFound.js";
 import AuthContext from "./AuthContext.js";
 import MyHeader from "../../components/MyHeader";
+import dummy from "../../data.json"
 
-// 더미 데이터
-const dummyUserData = [
-  {
-    userid: "happyday",
-    password: "Password123",
-    username : "김해피"
-  },
-  {
-    userid: "lovelyday",
-    password: "Password456",
-    username: "박블리"
-  },
-
-];
 
 function Login({ onLogin}) {
   const {
@@ -35,8 +22,8 @@ function Login({ onLogin}) {
   const onSubmit = async (data) => {
     const { userid, password } = data;
 
-    //더미 데이터에서 사용자 찾기
-    const user = dummyUserData.find((userData) => userData.userid === userid);
+    //db.json에서 사용자 찾기
+    const user = dummy.users.find((userData) => userData.userid === userid);
   
         if (user && user.password === password) {
           alert("로그인 성공!");
