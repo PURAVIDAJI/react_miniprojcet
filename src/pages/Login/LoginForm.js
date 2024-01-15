@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "../../errors/NotFound.js";
 import AuthContext from "./AuthContext.js";
 import MyHeader from "../../components/MyHeader";
-import dummy from "../../data.json"
-
+import Footer from "../../components/MyFooter.js";
 
 function Login({ onLogin}) {
   const {
@@ -38,7 +37,7 @@ function Login({ onLogin}) {
 
     }catch(error){
       console.error(error);
-      alert("오류 발생");
+      alert("로그인 과정에서 오류가 발생했습니다.");
 
 
     }
@@ -120,6 +119,7 @@ function Login({ onLogin}) {
         </form>
       </div>
     </div>
+    <Footer/>
     </div>
   );
 }

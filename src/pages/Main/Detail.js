@@ -7,6 +7,7 @@ import { categoryList } from "../../util/category";
 import Parser from 'html-react-parser';
 import MyHeader from "../../components/MyHeader";
 import AuthContext from "../Login/AuthContext";
+import Footer from "../../components/MyFooter";
 
 const Detail = () => {
     
@@ -127,6 +128,7 @@ const Detail = () => {
                 
 
             </div>
+            <Footer/>
             </div>
         );
 

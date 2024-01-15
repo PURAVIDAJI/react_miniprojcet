@@ -5,6 +5,7 @@ import { VolunteerStateContext } from "../../App";
 import MyButton from "../../components/MyButton";
 import { useNavigate } from "react-router-dom";
 import MyHeader from "../../components/MyHeader";
+import Footer from "../../components/MyFooter";
 
 const Cart = () => {
 
@@ -56,6 +57,7 @@ const Cart = () => {
             </div>
             </section>
             </div>
+            <Footer/>
         </div>
 
     );

@@ -1,3 +1,4 @@
+import Footer from "../../components/MyFooter";
 import MyHeader from "../../components/MyHeader";
 import VolunteerEditor from "../../components/VolunteerEditor";
 
@@ -6,6 +7,7 @@ const New = () => {
     <div>
       <MyHeader/>
       <VolunteerEditor />
+      <Footer/>
     </div>
   );
 };

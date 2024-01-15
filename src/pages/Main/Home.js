@@ -18,8 +18,9 @@ const Home = () => {
     <div>
       <MyHeader />
       <MyCarousel />
-      <VolunteerList VolunteerList={data} className="vl"/>
-      <Footer/>
+      <VolunteerList VolunteerList={data}/>
+     
+      <Footer />
     </div>
   );
 };

@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
 import "../../errors/NotFound.js";
+import MyHeader from "../../components/MyHeader.js";
+import Footer from "../../components/MyFooter.js";
 
 const SignUp = () => {
   const {
@@ -16,10 +18,10 @@ const SignUp = () => {
   } = useForm();
 
   const navigate = useNavigate();
-  const [setUserid] = useState();
-  const [setUsername] = useState();
-  const [setPassword] = useState();
-  const [setEmail] = useState();
+  const [userid,setUserid] = useState();
+  const [username,setUsername] = useState();
+  const [password,setPassword] = useState();
+  const [email,setEmail] = useState();
   const [gender,setGender] = useState("man");
 
   const onSubmit = async (formData) => {
@@ -48,6 +50,8 @@ const SignUp = () => {
   };
 
   return (
+    <div>
+    <MyHeader/>
     <div className="signup-page">
       <div className="form">
         <h2 className="signup-h2"> 오늘의 봉사 </h2>
@@ -55,43 +59,45 @@ const SignUp = () => {
         <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
-            placeholder="userId"
+            placeholder="아이디"
             name="userid"
-            
+            value={userid}
             onChange={(e) => setUserid(e.target.value)}
             {...register("userid", {
-              required: "id는 필수 입력사항입니다.",
+              required: "ID 는 필수 입력사항입니다.",
               pattern: {
                 value: /^[a-zA-Z0-9]{5,15}$/,
-                message: "아이디는 5-15자의 영숫자로 이루어져야 합니다.",
+                message: "아이디는 5-15자로 영어, 숫자만 사용할 수 있습니다.",
               },
             })}
           />
-          {errors.id && <span>id는 필수 입력 항목입니다.</span>}
+          {errors.userid && isSubmitted && <small className="error-message">{errors.userid.message}</small>}
 
           <input
             type="text"
-            placeholder="username"
+            placeholder="이름"
             name="username"
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
             aria-invalid={
               //submit -> password가 유효성검사 통과했을 때 비활성화 제출
               isSubmitted ? (errors.uesrname ? "true" : "false") : undefined
             }
             {...register("username", {
-              required: "username은 필수 입력사항입니다.",
+              required: "이름은 필수 입력사항입니다.",
               pattern: {
                 value: /^[가-힣]{1,5}$/,
-                message: "username은 1-5자의 한글로 이루어져야 합니다.",
+                message: "이름은 1-5자의 한글로 입력해주세요.",
               },
             })}
           />
-          {errors.id && <span>username은 필수 입력 항목입니다.</span>}
+          {errors.username && isSubmitted && <small className="error-message">{errors.username.message}</small>}
 
           <input
             type="password"
-            placeholder="password"
+            placeholder="비밀번호"
             name="password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             aria-invalid={
               //submit -> password가 유효성검사 통과했을 때 비활성화 제출
@@ -102,11 +108,12 @@ const SignUp = () => {
               pattern: {
                 value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
                 message:
-                  "비밀번호는 8자리 이상, 대문자, 소문자, 숫자 각각 1개 이상 포함해야 합니다.",
+                  "비밀번호는 8자리 이상으로 영어 대 소문자, 숫자를 조합해서 사용하세요.",
               },
             })}
           />
-          {errors.password && <span>비밀번호는 필수 입력 항목입니다.</span>}
+          {errors.password && isSubmitted && <small className="error-message">{errors.password.message}</small>}
+         
 
        
           <input
@@ -143,6 +150,8 @@ const SignUp = () => {
           </p>
         </form>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

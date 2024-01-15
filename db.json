@@ -7,6 +7,14 @@
       "password": "Password123",
       "email": "ijk9501@naver.com",
       "gender": "woman"
+    },
+    {
+      "id": "cd1e",
+      "userid": "lovelyday",
+      "username": "박블리",
+      "password": "Password123",
+      "email": "lovely@gmail.com",
+      "gender": "woman"
     }
   ]
 }
