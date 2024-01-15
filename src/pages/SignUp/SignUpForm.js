@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import "./SignUpForm.css";
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
-
 import "../../errors/NotFound.js";
 import MyHeader from "../../components/MyHeader.js";
 import Footer from "../../components/MyFooter.js";
@@ -21,8 +20,10 @@ const SignUp = () => {
   const [userid,setUserid] = useState();
   const [username,setUsername] = useState();
   const [password,setPassword] = useState();
-  const [email,setEmail] = useState();
+  const [setEmail] = useState();
   const [gender,setGender] = useState("man");
+  //아이디 중복체크
+
 
   const onSubmit = async (formData) => {
   
