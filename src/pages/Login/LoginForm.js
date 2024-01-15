@@ -16,24 +16,47 @@ function Login({ onLogin}) {
     handleSubmit,
     formState: { isSubmitting, errors }, //중복제출 방지, true:비활성, false:활성
   } = useForm();
+
   const navigate = useNavigate();
   const {login} =useContext(AuthContext);
 
   const onSubmit = async (data) => {
     const { userid, password } = data;
 
-    //db.json에서 사용자 찾기
-    const user = dummy.users.find((userData) => userData.userid === userid);
+    try{
+
+      const response = await fetch(`http://localhost:8000/users?userid=${userid}`);
+      const users =await response.json();
+
+      if(users.length>0 && users[0].password===password){
+        alert('로그인 성공!');
+        login(users[0]);
+        navigate("/");
+      }else{
+        alert("ID 또는 비밀번호가 일치하지 않습니다.");
+      }
+
+    }catch(error){
+      console.error(error);
+      alert("오류 발생");
+
+
+    }
+
+    
+    
+    // //더미 데이터에서 사용자 찾기
+    // const user = dummy.users.find((userData) => userData.userid === userid);
   
-        if (user && user.password === password) {
-          alert("로그인 성공!");
-          navigate("/");
-          login(user); //로그인 성공 시 AuthContext의 login 함수 호출한다!!!
-        } else {
-          alert("로그인 실패! 비밀번호가 일치하지 않습니다.");
-          console.log(data);
+    //     if (user && user.password === password) {
+    //       alert("로그인 성공!");
+    //       navigate("/");
+    //       login(user); //로그인 성공 시 AuthContext의 login 함수 호출한다!!!
+    //     } else {
+    //       alert("로그인 실패! 비밀번호가 일치하지 않습니다.");
+    //       console.log(data);
           
-        }
+    //     }
       
 
   };
