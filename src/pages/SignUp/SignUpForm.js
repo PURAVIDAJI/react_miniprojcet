@@ -22,7 +22,7 @@ const SignUp = () => {
   const [password,setPassword] = useState();
   const [setEmail] = useState();
   const [gender,setGender] = useState("man");
-  const [isUserIdAvailable, setIsUserIdAvailable] = useState(true);
+  //const [isUserIdAvailable, setIsUserIdAvailable] = useState(true);
 
   // //아이디 중복체크
   // const checkUserId = async () =>{
