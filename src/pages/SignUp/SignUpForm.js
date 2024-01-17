@@ -22,10 +22,31 @@ const SignUp = () => {
   const [password,setPassword] = useState();
   const [setEmail] = useState();
   const [gender,setGender] = useState("man");
-  //아이디 중복체크
+  const [isUserIdAvailable, setIsUserIdAvailable] = useState(true);
 
+  // //아이디 중복체크
+  // const checkUserId = async () =>{
+  //   try {
+  //     const response = await axios.get(`http://localhost:8000/users?userid=${userid}`);
+  //     setIsUserIdAvailable(response.data.length === 0);
+      
+  //   }catch(error){
+  //     console.error("아이디 중복 체크 중 에러 발생 :", error);
+  //     setIsUserIdAvailable(false);
+  //   }
+  // }
 
   const onSubmit = async (formData) => {
+    console.log(formData.userid);
+    
+
+    // //아이디 중복확인
+    // await checkUserId();
+    // console.log()
+    // if(!isUserIdAvailable){
+    //   alert("이미 존재하는 아이디입니다.")
+    //   return;
+    // }
   
 
     try {

@@ -15,6 +15,14 @@
       "password": "Password123",
       "email": "lovely@gmail.com",
       "gender": "woman"
+    },
+    {
+      "id": "1d11",
+      "userid": "ttungnyange",
+      "username": "뚱냥이",
+      "password": "cat123456A",
+      "email": "ttungnyange@naver.com",
+      "gender": "man"
     }
   ]
 }
