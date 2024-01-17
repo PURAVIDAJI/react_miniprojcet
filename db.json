@@ -23,6 +23,14 @@
       "password": "cat123456A",
       "email": "ttungnyange@naver.com",
       "gender": "man"
+    },
+    {
+      "id": "fe93",
+      "userid": "jjjkkk",
+      "username": "김인주",
+      "password": "Password123",
+      "email": "ijk9501@naver.com",
+      "gender": "man"
     }
   ]
 }

@@ -20,7 +20,7 @@ const SignUp = () => {
   const [userid,setUserid] = useState();
   const [username,setUsername] = useState();
   const [password,setPassword] = useState();
-  const [setEmail] = useState();
+  const [email,setEmail] = useState();
   const [gender,setGender] = useState("man");
   //const [isUserIdAvailable, setIsUserIdAvailable] = useState(true);
 
@@ -37,7 +37,7 @@ const SignUp = () => {
   // }
 
   const onSubmit = async (formData) => {
-    console.log(formData.userid);
+
     
 
     // //아이디 중복확인
@@ -142,11 +142,13 @@ const SignUp = () => {
             type="email"
             placeholder="email@test.com"
             name="email"
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             aria-invalid={
               //submit -> password가 유효성검사 통과했을 때 비활성화 제출
               isSubmitted ? (errors.email ? "true" : "false") : undefined
             }
+            
             {...register("email", {
               required: "이메일은 필수 입력사항입니다.",
               pattern: {
