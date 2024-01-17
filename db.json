@@ -31,6 +31,22 @@
       "password": "Password123",
       "email": "ijk9501@naver.com",
       "gender": "man"
+    },
+    {
+      "id": "2d18",
+      "userid": "aldante",
+      "username": "김슬로",
+      "password": "PAssword123",
+      "email": "lovely@gmail.com",
+      "gender": "man"
+    },
+    {
+      "id": "66fa",
+      "userid": "hihihi",
+      "username": "이하이",
+      "password": "PAssword123",
+      "email": "88iijj@naver.com",
+      "gender": "woman"
     }
   ]
 }

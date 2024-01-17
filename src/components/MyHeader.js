@@ -25,7 +25,7 @@ const MyHeader = () => {
       <Navbar bg="primary" data-bs-theme="dark">
         <Container>
           <Link to="/" style={{ textDecoration: "none" }}>
-          <Navbar.Brand>VolunteerNow</Navbar.Brand>
+          <Navbar.Brand>VolunteerToday</Navbar.Brand>
           </Link>
 
           <Nav className="me-auto">
