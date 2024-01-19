@@ -24,7 +24,7 @@ function Login({ onLogin}) {
 
     try{
 
-      const response = await fetch(`http://localhost:8000/users?userid=${userid}`);
+      const response = await fetch(`https://factual-crystalline-shrew.glitch.me/users?userid=${userid}`);
       const users =await response.json();
 
       if(users.length>0 && users[0].password===password){

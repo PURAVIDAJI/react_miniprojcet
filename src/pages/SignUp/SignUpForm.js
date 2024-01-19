@@ -51,7 +51,7 @@ const SignUp = () => {
 
     try {
       formData.gender = gender;
-      const response = await axios.post("http://localhost:8000/users", formData);
+      const response = await axios.post("https://factual-crystalline-shrew.glitch.me/users", formData);
       if (
         response &&
         response.formData &&
