@@ -353,6 +353,7 @@ font-size: 20px;
   margin: 0 auto;
 }
 
+
 .image-preview {
   width: 200px; 
     height: 300px; 
@@ -371,9 +372,9 @@ font-size: 20px;
 
 .upload-button {
   padding-bottom: 20px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
 }
 
 /* 이미지 업로드 버튼 스타일 */
@@ -390,7 +391,7 @@ font-size: 20px;
   border-radius: 5px;
   text-align: center;
   width: 100%;
-  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .upload-button label:hover {
@@ -608,8 +609,51 @@ input[type="file"] {
   line-height: 2.5;
 }
 
+/* Mypage */
+.mypage_profile{
+  width: 40%;
+}
+
+.mypage-item {
 
 
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  padding: 20px;
+
+  margin-left: 20px;
+  margin-right: 10px;
+  
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+  
+}
+.vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.image-upload-wrapper2 {
+  background-color: #ececec;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 10px;
+  margin-right: 10px;
+  margin: 0 auto;
+}
+
+.default-image2 {
+  max-width: 53%;
+  max-height:  53%;
+}
 /* Sidebar.css */
 /* .mypage-container{
   max-width: 1000px;

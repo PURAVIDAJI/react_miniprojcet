@@ -17,6 +17,7 @@ import LogoutForm from "./pages/Logout/LogoutForm";
 import { Navigate } from "react-router-dom";
 import AuthContext from "./pages/Login/AuthContext";
 import { useContext } from "react";
+import MyPage from "./pages/Main/mypage";
 
 const Routing = () => {
   const {isAuthenticated} = useContext(AuthContext);
@@ -35,6 +36,7 @@ const Routing = () => {
           {/* 로그인이 필요한 페이지에 대한 접근 제어 */}
           <Route path="/new" element={isAuthenticated ? <New /> : <Navigate to="/login" />} />
           console.log(isAuthenticated);
+          <Route path="/mypage" element = {isAuthenticated? <MyPage/> : <Navigate to="/login" />} />
           
           <Route path="/mypage/cart" element = {isAuthenticated? <Cart/> : <Navigate to="/login" />} />
           

@@ -6,10 +6,10 @@ const SideBar = () => {
       <div className="sidebar">
         <ul>
           <li>
-            <Link to="mypage">프로필</Link>
+            <Link to="/mypage">프로필</Link>
           </li>
           <li>
-            <Link to="cart">현재 신청 내역</Link>
+            <Link to="/mypage/cart">현재 신청 내역</Link>
           </li>
           <li>
             <Link to="history">이전 신청 내역</Link>
