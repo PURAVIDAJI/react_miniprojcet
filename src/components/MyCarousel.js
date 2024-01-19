@@ -16,16 +16,16 @@ function MyCarousel() {
         // style={{ width: "1200px", height: "400px" }}
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
+          <h3>오늘의 봉사</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src='/images/image3.webp'
+          src='/images/image2.jpg'
           alt="second slide"
-          style={{ width: "1200px", height: "400px" }}
+          //style={{ width: "1200px", height: "400px" }}
         />
         <Carousel.Caption>
           <h3>Second slide label</h3>

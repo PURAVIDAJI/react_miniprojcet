@@ -469,6 +469,20 @@ input[type="file"] {
   background-color: #000080;
   color: white;
 }
+/* Introduce */
+.IntroducePage{
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+ 
+
+}
+.Map{
+  display: flex; 
+  justify-content: space-between;
+
+}
 
 /* Detail */
 
@@ -490,7 +504,6 @@ input[type="file"] {
 .volunteer_img {
   width: 60%;
   padding-top: 58px;
-  
   text-align: center;
   /* display: inline-block; */
   /* display: flex;
