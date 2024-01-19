@@ -51,12 +51,13 @@ const MyHeader = () => {
             </Nav.Item>
 
             <Link to="/new">
-              <Button  variant="success">
+              <Button  variant="success"
+                       style={{height:"40px", marginRight: "0.5rem", boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.4)"}}>
                 모집글작성
               </Button>
             </Link>
             
-              <Button variant="danger" onClick={handleLogout}>
+              <Button variant="danger" onClick={handleLogout} style={{boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.4)"}}>
                 Log-Out
               </Button>
             </>
@@ -65,7 +66,7 @@ const MyHeader = () => {
 
 
           <Link to="/login">
-            <Button variant="danger">
+            <Button variant="danger" style={{boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.4)"}}>
               Log-In
             </Button>
             </Link>

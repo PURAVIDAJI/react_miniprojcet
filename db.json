@@ -47,6 +47,14 @@
       "password": "PAssword123",
       "email": "88iijj@naver.com",
       "gender": "woman"
+    },
+    {
+      "id": "6fd7",
+      "userid": "hehehe",
+      "username": "김헤나",
+      "password": "Password123",
+      "email": "kkkiii@naver.com",
+      "gender": "man"
     }
   ]
 }
