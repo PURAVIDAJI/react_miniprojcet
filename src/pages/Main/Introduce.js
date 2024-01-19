@@ -27,6 +27,7 @@ const Introduce = () => {
                 <img
                     className="d-block w-100"
                     src='/images/image3.webp'
+                    alt='banner'
                 />
 
             </div>
